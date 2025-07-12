@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import './Navbar.css';
 
 export default function Navbar() {
@@ -8,24 +8,36 @@ export default function Navbar() {
   return (
     <header className="navbar">
       <div className="navbar-container">
-        <Link to="/" className="navbar-logo">Fundify</Link>
-
-        <nav className={`navbar-links ${isOpen ? 'open' : ''}`}>
-          <Link to="/wallet">Wallet</Link>
-          <Link to="/exchange">Exchange</Link>
-          <Link to="/explorer">Explorer</Link>
-          <Link to="/pay">Pay</Link>
-          <Link to="/institutional">Institutional</Link>
+        <Link to="/" className="navbar-brand">Fundify</Link>
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="mobile-menu-button"
+          aria-label="Toggle menu"
+        >
+          ☰
+        </button>
+        <nav className="navbar-links">
+          <Link to="/wallet" className="nav-link">Wallet</Link>
+          <Link to="/exchange" className="nav-link">Exchange</Link>
+          <Link to="/explorer" className="nav-link">Explorer</Link>
+          <Link to="/pay" className="nav-link">Pay</Link>
+          <Link to="/institutional" className="nav-link">Institutional</Link>
           <Link to="/login" className="btn-login">Login</Link>
           <Link to="/signup" className="btn-signup">Sign Up</Link>
         </nav>
-
-        <button className="navbar-toggle" onClick={() => setIsOpen(!isOpen)}>
-          <span className="bar"></span>
-          <span className="bar"></span>
-          <span className="bar"></span>
-        </button>
       </div>
+
+      {isOpen && (
+        <div className="mobile-menu">
+          <Link to="/wallet" className="mobile-link" onClick={() => setIsOpen(false)}>Wallet</Link>
+          <Link to="/exchange" className="mobile-link" onClick={() => setIsOpen(false)}>Exchange</Link>
+          <Link to="/explorer" className="mobile-link" onClick={() => setIsOpen(false)}>Explorer</Link>
+          <Link to="/pay" className="mobile-link" onClick={() => setIsOpen(false)}>Pay</Link>
+          <Link to="/institutional" className="mobile-link" onClick={() => setIsOpen(false)}>Institutional</Link>
+          <Link to="/login" className="btn-login" onClick={() => setIsOpen(false)}>Login</Link>
+          <Link to="/signup" className="btn-signup" onClick={() => setIsOpen(false)}>Sign Up</Link>
+        </div>
+      )}
     </header>
   );
 }

@@ -1,17 +1,14 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: [
     "./index.html",
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-  extend: {
-    colors: {
-      brandBlue: '#00BFFF',
-      brandGreen: '#00FF7F',
-    },
+    extend: {},
   },
-},
-
-  plugins: [],
-};
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+  ],
+}
