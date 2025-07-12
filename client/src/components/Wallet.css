@@ -1,0 +1,67 @@
+/* src/components/Wallet.css */
+
+.wallet-container {
+  @apply min-h-screen bg-gradient-to-br from-purple-800 via-black to-purple-800 p-6;
+}
+
+.wallet-card {
+  @apply max-w-5xl mx-auto bg-white shadow-lg rounded-lg p-6;
+}
+
+.wallet-title {
+  @apply text-3xl font-bold mb-4 text-black;
+}
+
+.wallet-balance {
+  @apply mb-6 p-4 bg-gray-100 text-black rounded-lg;
+}
+
+.wallet-balance-title {
+  @apply text-xl font-semibold;
+}
+
+.wallet-balance-value {
+  @apply text-3xl font-bold;
+}
+
+.wallet-section-title {
+  @apply text-lg font-semibold mb-2 text-black;
+}
+
+.wallet-table {
+  @apply min-w-full border rounded mb-6;
+}
+
+.wallet-thead {
+  @apply bg-gray-200;
+}
+
+.wallet-th, .wallet-td {
+  @apply p-2 text-left text-black;
+}
+
+.wallet-button-primary {
+  @apply bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition;
+}
+
+.wallet-button-secondary {
+  @apply bg-gray-300 text-purple-700 px-4 py-2 rounded hover:bg-gray-400 transition;
+}
+
+.wallet-modal-input {
+  @apply text-black w-full border rounded px-3 py-2;
+}
+
+.wallet-modal-button-primary {
+  @apply bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition w-full;
+}
+
+.wallet-modal-button-secondary {
+  @apply bg-red-600 text-black px-4 py-2 rounded hover:bg-red-700 transition w-full;
+}
+.wallet-modal-button-withdraw{
+  @apply bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition w-full;
+}
+.wallet-modal-button-add{
+  @apply bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition w-full;
+}
